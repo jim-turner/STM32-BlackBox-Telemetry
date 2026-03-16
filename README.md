@@ -1,13 +1,6 @@
 # STM32-BlackBox-Telemetry
 
 
-
-A great README is more than just a description—it’s a sales pitch for your engineering skills. Since you’re aiming for remote work, this needs to look like a professional technical manual.
-
-Here is a structured template for your `README.md`. It emphasizes the "Black Box" concept and high-level engineering choices like DMA and SDIO.
-
----
-
 # STM32-BlackBox-Telemetry
 
 ### **"Solving the Invisible Bug: High-Reliability Diagnostic Logging"**
@@ -57,7 +50,40 @@ After a simulated crash, the "Post-Mortem" tool generates a report like this:
 | Timestamp (ms) | Task ID | CPU Load | Heap Free (Bytes) | Last Event |
 | --- | --- | --- | --- | --- |
 | 14500 | 0x01 | 12% | 12400 | Sensor_Read_OK |
-| 14600 | 0x01 | 14% | 12380 | Sensor_Read_OK |
+| 14600 | 0x01 | 14% | 12380 | Sensor_Read_OK |Page Structure
+
+A good README.md often has these sections:
+
+    Title
+    Description
+    Motivation
+    Quick Start
+    Usage
+    Contributing
+
+We will look at each of these in detail later, but for now let's work on your title.
+Title Section
+
+Give your project a good name! Don't name it "project", "API server", or "test app". Give it a name that's unique and memorable. Personality is good. Here are some examples:
+
+    "Text Tunnel": A terminal-based real-time messaging app
+    "Steamiest": A web app that tells you which of your Steam friends has the most similar game library
+    "slowviz": A library that makes it easy to visualize the network latency of a Go application
+
+Most importantly it should:
+
+    Pique interest
+    Hint at what the project does
+
+Markdown Formatting
+
+Your README.md should be a well-formatted Markdown file. Your title should be an H1 (heading 1, the largest heading). Subheadings should be H2s and H3s to organize the rest of your README into a neat hierarchy.
+
+Use rich text to make your README easy to read. Don't be shy of bold, italics, numbered lists, bullet points, and other formatting options. Skimmability is good!
+Assignment
+
+Submit the link to your project's GitHub repo after you've added a title with an H1 heading.
+
 | **14701** | **0x03** | **98%** | **12** | **STACK_OVERFLOW_DETECTED** |
 | 14702 | CRASH | -- | -- | HardFault_Triggered |
 
