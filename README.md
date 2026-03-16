@@ -67,9 +67,3 @@ After a simulated crash, the "Post-Mortem" tool generates a report like this:
 I am an Embedded Software Developer focusing on C/C++ and ARM architecture. I specialize in building reliable, remote-ready firmware that prioritizes diagnostics and system integrity.
 
 ---
-
-### Pro-Tip for your GitHub:
-
-In your `docs/` folder, add a **"Lessons Learned"** file. Mention that you chose **SDIO over SPI** to learn about high-speed signal integrity, and how you managed the **HardFault** logic. This shows you have a "growth mindset," which remote employers love.
-
-**Would you like me to help you write the Python script that converts the binary SD card data into that CSV table for the README?**
