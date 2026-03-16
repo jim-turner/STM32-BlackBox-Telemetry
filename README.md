@@ -1,8 +1,5 @@
 # STM32-BlackBox-Telemetry
 
-
-# STM32-BlackBox-Telemetry
-
 ### **"Solving the Invisible Bug: High-Reliability Diagnostic Logging"**
 
 ## 🚀 The Problem
