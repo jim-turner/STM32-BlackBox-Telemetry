@@ -54,10 +54,58 @@ LoopFillZerobss:
 .type g_pfnVectors, %object
 
 g_pfnVectors:
-  .word _estack
-  .word Reset_Handler
-  /* Minimal stub table: Add peripheral handlers here as your architecture expands */
-  .word NMI_Handler
-  .word HardFault_Handler
+  .word _estack                  /* 0x00: Top of Stack */
+  .word Reset_Handler            /* 0x04: Reset Handler */
+  .word NMI_Handler              /* 0x08: NMI Handler */
+  .word HardFault_Handler        /* 0x0C: Hard Fault Handler */
+  .word MemManage_Handler        /* 0x10: MPU Fault Handler */
+  .word BusFault_Handler         /* 0x14: Bus Fault Handler */
+  .word UsageFault_Handler       /* 0x18: Usage Fault Handler */
+  .word 0                        /* 0x1C: Reserved */
+  .word 0                        /* 0x20: Reserved */
+  .word 0                        /* 0x24: Reserved */
+  .word 0                        /* 0x28: Reserved */
+  .word SVC_Handler              /* 0x2C: SVCall Handler */
+  .word DebugMon_Handler         /* 0x30: Debug Monitor Handler */
+  .word 0                        /* 0x34: Reserved */
+  .word PendSV_Handler           /* 0x38: PendSV Handler */
+  .word SysTick_Handler          /* 0x3C: SysTick Handler (Slot 15 / 16th word) */
 
-  
+  /* Standard peripheral interrupts would append right here down the line */
+
+.size g_pfnVectors, .-g_pfnVectors
+
+/* Define default weak stubs for core exceptions. 
+   If your C code provides a real function matching these names,
+   the linker will automatically route the vector to your C code instead! */
+.section .text.Default_Handler,"ax",%progbits
+Default_Handler:
+  b Default_Handler
+  .size Default_Handler, .-Default_Handler
+
+  .weak NMI_Handler
+  .thumb_set NMI_Handler, Default_Handler
+
+  .weak HardFault_Handler
+  .thumb_set HardFault_Handler, Default_Handler
+
+  .weak MemManage_Handler
+  .thumb_set MemManage_Handler, Default_Handler
+
+  .weak BusFault_Handler
+  .thumb_set BusFault_Handler, Default_Handler
+
+  .weak UsageFault_Handler
+  .thumb_set UsageFault_Handler, Default_Handler
+
+  .weak SVC_Handler
+  .thumb_set SVC_Handler, Default_Handler
+
+  .weak DebugMon_Handler
+  .thumb_set DebugMon_Handler, Default_Handler
+
+  .weak PendSV_Handler
+  .thumb_set PendSV_Handler, Default_Handler
+
+  .weak SysTick_Handler
+  .thumb_set SysTick_Handler, Default_Handler
